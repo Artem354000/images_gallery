@@ -21,19 +21,19 @@ class GalleryPage extends StatelessWidget {
       ),
       body: pictureState.when(
         loading: () {
-          return loadingPictures();
+          return _loadingPictures();
         },
         loaded: (pictures) {
-          return loadedPictures(pictures);
+          return _loadedPictures(pictures);
         },
         error: () {
-          return errorLoadingPictures();
+          return _errorLoadingPictures();
         },
       ),
     );
   }
 
-  Padding errorLoadingPictures() {
+  Padding _errorLoadingPictures() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Center(
@@ -63,7 +63,7 @@ class GalleryPage extends StatelessWidget {
     );
   }
 
-  GridView loadedPictures(List<Picture> pictures) {
+  GridView _loadedPictures(List<Picture> pictures) {
     return GridView.builder(
       itemCount: pictures.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -131,7 +131,7 @@ class GalleryPage extends StatelessWidget {
     );
   }
 
-  Center loadingPictures() {
+  Center _loadingPictures() {
     return Center(
       child: CircularProgressIndicator(
         color: Colors.teal.shade300,
