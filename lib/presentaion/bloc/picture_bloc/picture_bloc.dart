@@ -13,6 +13,7 @@ class PictureBloc extends Bloc<PictureEvent, PictureState> {
       : _pictureRepository = pictureRepository,
         super(const PictureState.loading()) {
     on<PictureLoadEvent>(_loadPictures);
+    add(const PictureEvent.loadPictures());
   }
 
   Future<void> _loadPictures(

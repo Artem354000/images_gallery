@@ -20,8 +20,7 @@ class ImagesGallery extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<PictureBloc>(
-          create: (_) =>
-              sl<PictureBloc>()..add(const PictureEvent.loadPictures()),
+          create: (_) => sl<PictureBloc>(),
         ),
         BlocProvider<PictureOfItemCubit>(
           create: (_) => sl<PictureOfItemCubit>(),
