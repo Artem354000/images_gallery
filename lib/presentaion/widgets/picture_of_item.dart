@@ -30,7 +30,10 @@ class _PictureOfItemState extends State<PictureOfItem> {
         stalePeriod: const Duration(days: 3),
       ),
     );
-    pictureUrl = (widget.isBig ? widget.picture.urls.full : widget.picture.urls.regular) ?? "";
+    pictureUrl = (widget.isBig
+            ? widget.picture.urls.full
+            : widget.picture.urls.regular) ??
+        "";
     super.initState();
   }
 
@@ -60,7 +63,7 @@ class _PictureOfItemState extends State<PictureOfItem> {
           errorWidget: (context, url, error) {
             return const Center(
               child: Text(
-                " ☹",
+                "☹",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 35),
               ),

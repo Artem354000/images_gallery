@@ -6,35 +6,34 @@ part of 'picture.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Picture _$$_PictureFromJson(Map<String, dynamic> json) => _$_Picture(
+Picture _$PictureFromJson(Map<String, dynamic> json) => Picture(
       id: json['id'] as String?,
       description: json['description'] as String?,
       user: User.fromJson(json['user'] as Map<String, dynamic>),
       urls: Urls.fromJson(json['urls'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_PictureToJson(_$_Picture instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$PictureToJson(Picture instance) => <String, dynamic>{
       'id': instance.id,
       'description': instance.description,
       'user': instance.user,
       'urls': instance.urls,
     };
 
-_$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
+User _$UserFromJson(Map<String, dynamic> json) => User(
       name: json['name'] as String?,
     );
 
-Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
+Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'name': instance.name,
     };
 
-_$_Urls _$$_UrlsFromJson(Map<String, dynamic> json) => _$_Urls(
+Urls _$UrlsFromJson(Map<String, dynamic> json) => Urls(
       full: json['full'] as String?,
       regular: json['regular'] as String?,
     );
 
-Map<String, dynamic> _$$_UrlsToJson(_$_Urls instance) => <String, dynamic>{
+Map<String, dynamic> _$UrlsToJson(Urls instance) => <String, dynamic>{
       'full': instance.full,
       'regular': instance.regular,
     };

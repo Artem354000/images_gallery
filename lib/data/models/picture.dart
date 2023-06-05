@@ -1,33 +1,38 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:json_annotation/json_annotation.dart';
 
-part "picture.freezed.dart";
 part "picture.g.dart";
 
-@freezed
-class Picture with _$Picture {
-  const factory Picture({
-    required String? id,
-    required String? description,
-    required User user,
-    required Urls urls,
-  }) = _Picture;
+@JsonSerializable()
+class Picture {
+  String? id, description;
+  User user;
+  Urls urls;
+  Picture({
+    required this.id,
+    required this.description,
+    required this.user,
+    required this.urls,
+  });
 
-  factory Picture.fromJson(Map<String, dynamic> json) => _$PictureFromJson(json);
+  factory Picture.fromJson(Map<String, dynamic> json) =>
+      _$PictureFromJson(json);
 }
 
-@freezed
-class User with _$User {
-  const factory User({required String? name}) = _User;
+@JsonSerializable()
+class User {
+  String? name;
+  User({required this.name});
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }
 
-@freezed
-class Urls with _$Urls {
-  const factory Urls({
-    required String? full,
-    required String? regular,
-  }) = _Urls;
+@JsonSerializable()
+class Urls {
+  String? full, regular;
+  Urls({
+    required this.full,
+    required this.regular,
+  });
 
   factory Urls.fromJson(Map<String, dynamic> json) => _$UrlsFromJson(json);
 }
